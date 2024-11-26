@@ -1,0 +1,41 @@
+<configuration>
+
+    <!-- Appender para logs de DEBUG e INFO -->
+    <appender name="DEBUG_STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SSS}][%thread][%logger{0}] %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender para logs de WARN -->
+    <appender name="WARN_STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SSS}][%thread][%logger{0}] %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender para logs de ERROR -->
+    <appender name="ERROR_STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.SSS}][%thread][%logger{0}] %level - %msg%n</pattern>
+        </encoder>
+        <target>System.err</target>
+    </appender>
+
+    <!-- Configuração do root logger -->
+    <root level="DEBUG">
+        <appender-ref ref="DEBUG_STDOUT"/>
+        <appender-ref ref="WARN_STDOUT"/>
+        <appender-ref ref="ERROR_STDERR"/>
+    </root>
+
+</configuration>
