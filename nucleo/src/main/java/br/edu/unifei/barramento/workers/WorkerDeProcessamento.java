@@ -99,7 +99,7 @@ public class WorkerDeProcessamento implements Runnable {
 
                 if (comando != null) {
                     mensagem.adicionarTimestampAoMetadata("timestamp_bus_processamento_inicio");
-                    Mensagem resposta = comando.executar(mensagem, barramento, this.protocolo);
+                    Mensagem resposta = comando.executar(mensagem, barramento);
                     if (resposta != null) {
                         resposta.adicionarTimestampAoMetadata("timestamp_bus_processamento_fim");
                         barramento.enviarMensagem(resposta, this.protocolo);

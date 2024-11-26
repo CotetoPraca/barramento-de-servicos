@@ -27,11 +27,10 @@ public class ComandoRemoverServico implements Comando {
      *
      * @param mensagem   A {@link Mensagem} recebida que contém os parâmetros necessários para a execução.
      * @param barramento O {@link Barramento} onde os serviços e endpoints estão registrados.
-     * @param protocolo  O {@link Protocolo} usado para a comunicação no barramento.
      * @return Uma {@link Mensagem} de confirmação da remoção.
      */
     @Override
-    public Mensagem executar(Mensagem mensagem, Barramento barramento, Protocolo protocolo) {
+    public Mensagem executar(Mensagem mensagem, Barramento barramento) {
         barramento.getGerenciadorDeServicos().removerServico(this.servico);
 
         JsonObject resultado = new JsonObject();

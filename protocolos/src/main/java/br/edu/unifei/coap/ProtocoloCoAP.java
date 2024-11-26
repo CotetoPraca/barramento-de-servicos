@@ -1,8 +1,8 @@
 package br.edu.unifei.coap;
 
-import br.edu.unifei.utils.LogUtils;
 import br.edu.unifei.modelos.mensagem.Mensagem;
 import br.edu.unifei.modelos.protocolo.Protocolo;
+import br.edu.unifei.utils.LogUtils;
 import com.google.gson.JsonObject;
 import com.mbed.coap.client.CoapClient;
 import com.mbed.coap.packet.*;

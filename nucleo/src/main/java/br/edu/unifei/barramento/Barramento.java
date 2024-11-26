@@ -23,7 +23,7 @@ public class Barramento {
      * Mapeamento responsável por armazenar a relação entre o endpoint e o protocolo de preferência
      * associado a ele.
      */
-    protected Map<String, Protocolo> preferenciasDeProtocolo;
+    protected final Map<String, Protocolo> preferenciasDeProtocolo;
 
     /**
      * Constrói um novo Barramento com o gerenciador de serviços especificado.

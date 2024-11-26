@@ -26,11 +26,10 @@ public class ComandoBuscarServico implements Comando {
      *
      * @param mensagem   A {@link Mensagem} contendo a requisição de busca.
      * @param barramento O {@link Barramento} que gerencia o inventário de serviços.
-     * @param protocolo  O {@link Protocolo} usado para a comunicação no barramento.
      * @return Uma {@link Mensagem} de resultado contendo o bytecode do serviço buscado ou um erro, se não encontrado.
      */
     @Override
-    public Mensagem executar(Mensagem mensagem, Barramento barramento, Protocolo protocolo) {
+    public Mensagem executar(Mensagem mensagem, Barramento barramento) {
         String bytecode = barramento.getGerenciadorDeServicos().buscarServico(this.servico);
 
         JsonObject resultado = new JsonObject();

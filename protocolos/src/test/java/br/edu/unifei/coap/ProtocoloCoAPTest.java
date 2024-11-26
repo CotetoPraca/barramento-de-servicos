@@ -1,7 +1,7 @@
 package br.edu.unifei.coap;
 
-import br.edu.unifei.utils.LogUtils;
 import br.edu.unifei.modelos.mensagem.Mensagem;
+import br.edu.unifei.utils.LogUtils;
 import com.google.gson.JsonObject;
 import com.mbed.coap.packet.CoapRequest;
 import com.mbed.coap.packet.CoapResponse;
@@ -39,9 +39,7 @@ public class ProtocoloCoAPTest {
     public void testServidorCoAPIniciaCorretamente() {
         // Verifica se o servidor foi iniciado corretamente
         assertDoesNotThrow(
-                () -> {
-                    assertNotNull(protocoloCoAP, "ProtocoloCoAP não deve ser nulo após inicialização");
-                },
+                () -> assertNotNull(protocoloCoAP, "ProtocoloCoAP não deve ser nulo após inicialização"),
                 "O servidor CoAP deveria iniciar sem exceções"
         );
     }
@@ -67,7 +65,7 @@ public class ProtocoloCoAPTest {
 
     @Test
     @DisplayName("Teste de Resposta do Servidor CoAP")
-    public void testRespostaDoServidorCoAP() throws IOException, InterruptedException {
+    public void testRespostaDoServidorCoAP() throws InterruptedException {
         // Cria uma mensagem simulada
         JsonObject conteudo = new JsonObject();
         conteudo.addProperty("mensagem", "Mensagem para teste de resposta");

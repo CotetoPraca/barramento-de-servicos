@@ -20,11 +20,10 @@ public class ComandoEnviarArquivosBase implements Comando {
      *
      * @param mensagem   A {@link Mensagem} solicitando o envio dos arquivos.
      * @param barramento O {@link Barramento} responsável pelo gerenciamento do inventário de serviços.
-     * @param protocolo  O {@link Protocolo} usado para a comunicação no barramento.
      * @return Uma {@link Mensagem} contendo o bytecode dos arquivos base compactados ou um erro caso ocorra falha.
      */
     @Override
-    public Mensagem executar(Mensagem mensagem, Barramento barramento, Protocolo protocolo) {
+    public Mensagem executar(Mensagem mensagem, Barramento barramento) {
         JsonObject resultado = new JsonObject();
 
         // Mantém os metadados da mensagem original se houver

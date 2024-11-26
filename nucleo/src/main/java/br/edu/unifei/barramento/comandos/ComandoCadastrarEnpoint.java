@@ -28,11 +28,10 @@ public class ComandoCadastrarEnpoint implements Comando {
      *
      * @param mensagem   A {@link Mensagem} contendo a requisição de cadastro.
      * @param barramento O {@link Barramento} onde o endpoint será registrado.
-     * @param protocolo  O {@link Protocolo} usado para a comunicação no barramento.
      * @return Uma mensagem de confirmação de registro.
      */
     @Override
-    public Mensagem executar(Mensagem mensagem, Barramento barramento, Protocolo protocolo) {
+    public Mensagem executar(Mensagem mensagem, Barramento barramento) {
         barramento.cadastrarEndpoint(endpoint, this.protocolo);
 
         JsonObject resultado = new JsonObject();

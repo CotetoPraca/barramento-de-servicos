@@ -15,11 +15,10 @@ public class ComandoListarServicos implements Comando {
      *
      * @param mensagem   A {@link Mensagem} solicitando a listagem de serviços.
      * @param barramento O {@link Barramento} que gerencia o banco de serviços.
-     * @param protocolo  O {@link Protocolo} usado para a comunicação no barramento.
      * @return Uma {@link Mensagem} contendo uma lista com o nome de todos os serviços registrados.
      */
     @Override
-    public Mensagem executar(Mensagem mensagem, Barramento barramento, Protocolo protocolo) {
+    public Mensagem executar(Mensagem mensagem, Barramento barramento) {
         String listaDeServicos = barramento.getGerenciadorDeServicos().listarServicos();
 
         JsonObject resultado = new JsonObject();

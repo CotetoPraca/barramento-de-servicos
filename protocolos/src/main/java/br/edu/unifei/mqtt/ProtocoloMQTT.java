@@ -1,8 +1,8 @@
 package br.edu.unifei.mqtt;
 
-import br.edu.unifei.utils.LogUtils;
 import br.edu.unifei.modelos.mensagem.Mensagem;
 import br.edu.unifei.modelos.protocolo.Protocolo;
+import br.edu.unifei.utils.LogUtils;
 import com.google.gson.JsonObject;
 import org.eclipse.paho.client.mqttv3.*;
 

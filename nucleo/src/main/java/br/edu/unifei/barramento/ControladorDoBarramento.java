@@ -12,8 +12,8 @@ public abstract class ControladorDoBarramento {
 
     protected WorkerDeProcessamento workerDeProcessamento;
     protected WorkerDeRecepcao workerDeRecepcao;
-    protected FilaDeMensagens filaDeMensagens;
-    protected Barramento barramento;
+    protected final FilaDeMensagens filaDeMensagens;
+    protected final Barramento barramento;
     protected boolean ativo;
 
     /**

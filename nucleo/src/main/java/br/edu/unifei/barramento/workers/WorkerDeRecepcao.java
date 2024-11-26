@@ -2,9 +2,7 @@ package br.edu.unifei.barramento.workers;
 
 import br.edu.unifei.barramento.FilaDeMensagens;
 import br.edu.unifei.modelos.mensagem.Mensagem;
-import br.edu.unifei.modelos.protocolo.Protocolo;
 import br.edu.unifei.utils.LogUtils;
-import com.google.gson.JsonObject;
 
 /**
  * Worker responsável por receber mensagens e adicioná-las à fila para processamento posterior. Cada implementação
