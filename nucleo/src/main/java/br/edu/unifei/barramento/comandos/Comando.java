@@ -2,7 +2,6 @@ package br.edu.unifei.barramento.comandos;
 
 import br.edu.unifei.barramento.Barramento;
 import br.edu.unifei.modelos.mensagem.Mensagem;
-import br.edu.unifei.modelos.protocolo.Protocolo;
 
 /**
  * Interface que define o contrato para execução de comandos no barramento.

@@ -17,6 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SuppressWarnings("unused")
 public class ProtocoloCoAPTest {
 
     private ProtocoloCoAP protocoloCoAP;

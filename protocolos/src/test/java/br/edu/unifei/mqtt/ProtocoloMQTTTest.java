@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SuppressWarnings("unused")
 public class ProtocoloMQTTTest {
 
     private static final String TEST_TOPIC = "topico/barramento";

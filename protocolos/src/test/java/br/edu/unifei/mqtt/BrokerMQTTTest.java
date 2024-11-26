@@ -3,6 +3,7 @@ package br.edu.unifei.mqtt;
 import br.edu.unifei.modelos.mensagem.Mensagem;
 import com.google.gson.JsonObject;
 
+@SuppressWarnings("unused")
 public class BrokerMQTTTest {
     public static void main(String[] args) {
         BrokerMQTT broker = new BrokerMQTT();

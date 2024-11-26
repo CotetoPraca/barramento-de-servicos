@@ -2,7 +2,6 @@ package br.edu.unifei.barramento.comandos;
 
 import br.edu.unifei.barramento.Barramento;
 import br.edu.unifei.modelos.mensagem.Mensagem;
-import br.edu.unifei.modelos.protocolo.Protocolo;
 import br.edu.unifei.utils.FileUtils;
 import br.edu.unifei.utils.LogUtils;
 import com.google.gson.JsonObject;

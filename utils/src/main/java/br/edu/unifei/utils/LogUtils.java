@@ -96,6 +96,7 @@ public class LogUtils {
      * @param message A mensagem a ser registrada.
      * @param args    Argumentos opcionais para formatação da mensagem.
      */
+    @SuppressWarnings("unused")
     public static void logTrace(String message, Object... args) {
         Logger logger = getCallerLogger();
         if (logger.isTraceEnabled()) {

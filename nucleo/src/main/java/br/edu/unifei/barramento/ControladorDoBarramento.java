@@ -14,6 +14,7 @@ public abstract class ControladorDoBarramento {
     protected WorkerDeRecepcao workerDeRecepcao;
     protected final FilaDeMensagens filaDeMensagens;
     protected final Barramento barramento;
+    @SuppressWarnings("unused")
     protected boolean ativo;
 
     /**

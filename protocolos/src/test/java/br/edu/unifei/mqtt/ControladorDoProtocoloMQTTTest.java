@@ -15,6 +15,7 @@ import org.mockito.Mockito;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.*;
 
+@SuppressWarnings("unused")
 public class ControladorDoProtocoloMQTTTest {
 
     private ControladorDoProtocoloMQTT controlador;

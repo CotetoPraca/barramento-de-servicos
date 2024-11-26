@@ -18,6 +18,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.*;
 
+@SuppressWarnings("unused")
 public class ControladorDoProtocoloCoAPTest {
 
     private ControladorDoProtocoloCoAP controlador;
