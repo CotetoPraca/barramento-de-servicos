@@ -41,15 +41,6 @@ public class WorkerDeRecepcao implements Runnable {
      * @param mensagem A mensagem recebida a ser adicionada à {@link FilaDeMensagens}.
      */
     public void adicionarMensagemAFila(Mensagem mensagem) {
-        String sufixo_timestamp = "";
-        if (mensagem.getOrigem().contains("cliente")) {
-            sufixo_timestamp += "_cliente";
-        } else if (mensagem.getOrigem().contains("servidor")) {
-            sufixo_timestamp += "_servidor";
-        } else if (mensagem.getOrigem().contains("embarcado")) {
-            sufixo_timestamp += "_embarcado";
-        }
-        mensagem.adicionarTimestampAoMetadata(String.format("timestamp_bus_msg_recebida%s", sufixo_timestamp));
         fila.adicionar(mensagem);
         LogUtils.logInfo("Mensagem recebida e adicionada à fila.");
     }

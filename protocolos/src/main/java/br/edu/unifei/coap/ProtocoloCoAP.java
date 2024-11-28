@@ -65,6 +65,17 @@ public class ProtocoloCoAP extends Protocolo {
                                 
                                 String acao = mensagemRecebida.getAcao();
                                 String destino = mensagemRecebida.getDestino();
+
+                                String sufixo_timestamp = "";
+                                if (mensagemRecebida.getOrigem().contains("cliente")) {
+                                    sufixo_timestamp += "_cliente";
+                                } else if (mensagemRecebida.getOrigem().contains("servidor")) {
+                                    sufixo_timestamp += "_servidor";
+                                } else if (mensagemRecebida.getOrigem().contains("embarcado")) {
+                                    sufixo_timestamp += "_embarcado";
+                                }
+                                mensagemRecebida.adicionarTimestampAoMetadata(
+                                        String.format("timestamp_bus_msg_recebida%s", sufixo_timestamp));
                                 
                                 if (acao.equals("ENVIAR_MENSAGEM") && destino.isEmpty()) {
                                     Mensagem mensagemErro = getMensagemErro(mensagemRecebida);
