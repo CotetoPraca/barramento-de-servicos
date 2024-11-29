@@ -23,6 +23,12 @@
             <bind-address>127.0.0.1</bind-address>
             <name>same-machine-listener-port-1883</name>
         </tcp-listener>
+        <!-- Cuidado ao habilitar para 0.0.0.0 em redes públicas!!! -->
+<!--        <tcp-listener>-->
+<!--            <port>1883</port>-->
+<!--            <bind-address>0.0.0.0</bind-address>-->
+<!--            <name>open-world-listener-port-1883</name>-->
+<!--        </tcp-listener>-->
     </listeners>
     <mqtt>
 
@@ -46,7 +52,7 @@
 
         <keep-alive>
             <allow-unlimited>true</allow-unlimited>
-            <max-keep-alive>4</max-keep-alive>
+            <max-keep-alive>5</max-keep-alive>
         </keep-alive>
 
         <packets>
@@ -54,7 +60,7 @@
         </packets>
 
         <receive-maximum>
-            <server-receive-maximum>4</server-receive-maximum>
+            <server-receive-maximum>5</server-receive-maximum>
         </receive-maximum>
 
         <quality-of-service>

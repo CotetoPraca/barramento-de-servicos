@@ -23,7 +23,7 @@ import static com.mbed.coap.packet.CoapResponse.coapResponse;
  */
 public class ProtocoloCoAP extends Protocolo {
 
-    private static final String SERVER_HOST = "192.168.0.8"; // IPv4 da máquina atual
+    private static final String SERVER_HOST = "localhost"; // IPv4 da máquina atual
     private static final int SERVER_PORT = 5683;
     private CoapClient cliente;
     private CoapServer servidor;
