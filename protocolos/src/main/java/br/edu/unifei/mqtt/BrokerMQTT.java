@@ -4,9 +4,13 @@ import br.edu.unifei.utils.LogUtils;
 import com.hivemq.embedded.EmbeddedHiveMQ;
 import com.hivemq.embedded.EmbeddedHiveMQBuilder;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
 public class BrokerMQTT {
@@ -15,13 +19,21 @@ public class BrokerMQTT {
 
     public BrokerMQTT() {
         try {
-            Path configPath = Paths.get(Objects.requireNonNull(
-                    BrokerMQTT.class.getClassLoader().getResource("hivemq_conf")).toURI());
+            Path tempDir = Files.createTempDirectory("hivemq_conf_");
+
+            try (InputStream source = BrokerMQTT.class.getClassLoader().getResourceAsStream("hivemq_conf/config.xml")) {
+                if (source == null) throw new RuntimeException("Configuração HiveMQ não encontrada.");
+
+                Path targetFile = tempDir.resolve("config.xml");
+                Files.copy(source, targetFile, StandardCopyOption.REPLACE_EXISTING);
+            }
 
             EmbeddedHiveMQBuilder builder = EmbeddedHiveMQ.builder()
-                    .withConfigurationFolder(configPath);
+                    .withConfigurationFolder(tempDir);
+
             hiveMQ = builder.build();
-        } catch (URISyntaxException | NullPointerException ex) {
+
+        } catch (NullPointerException | IOException ex) {
             LogUtils.logError("Erro ao configurar o broker MQTT: %s", ex.getMessage());
             throw new RuntimeException("Falha ao configurar o broker MQTT", ex);
         }
