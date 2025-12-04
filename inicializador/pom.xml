@@ -65,6 +65,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <finalName>barramento-de-servicos</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <filters>
                                 <filter>
